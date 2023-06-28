@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>add</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="addForm" (ngSubmit)="OnSubmit(addForm.value)">
+    <ion-item>
+      <ion-label>Question:</ion-label>
+      <ion-input formControlName="question" type="text" placeholder="Write Your question"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Answer:</ion-label>
+      <ion-input formControlName="answer" type="text" placeholder="Write Your answer"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Categories:</ion-label>
+      <ion-select interface="popover" formControlName="categories" multiple>
+        <ion-select-option value="Python">Python</ion-select-option>
+        <ion-select-option value="Hindi">Hindi</ion-select-option>
+        <ion-select-option value="English">English</ion-select-option>
+        <ion-select-option value="Java">Java</ion-select-option>
+        <ion-select-option value="Ionic">Ionic</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="Submit" expand="block">Add your Question</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
